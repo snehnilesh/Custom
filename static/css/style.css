@@ -1,0 +1,299 @@
+body{
+    justify-content: center;
+    height: 100%;
+}
+@media (min-width:1000px){
+    .appname{
+        min-height: 78vh;
+        margin-bottom: 6vh;
+        font-size: 124px;
+    }
+}
+@media (max-width:1000px){
+    .subs, .ns, .pb{
+        height: 50px;
+        width: 140px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .container{
+        height: 82px;
+        width: 484px;
+        bottom: 4vh;
+    }
+    .appname{
+        min-height: 80vh;
+        font-size: 72px;
+    }
+}
+@media (max-width:600px){
+    /* .subs, .ns, .pb{
+        height: 50px;
+        width: 100px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    .container{
+        height: 82px;
+        width: 364px;
+        bottom: 4vh;
+        font-size: 8px;
+    } */
+    .subs, .ns, .pb{
+        height: 40px;
+        width: 96px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .container{
+        height: 64px;
+        width: 352px;
+        bottom: 4vh;
+        font-size: 8px;
+    }
+    .appname{
+        min-height: 80vh;
+        font-size: 60px;
+    }
+}
+@media (prefers-color-scheme: light){
+    html{
+        background: #ffffff;
+    }
+    .MainCard, .MainCardLeft, .MainCardRight, .HomeCard{
+        background: #F2F2F7;
+    }
+    .appname, .title, .description, .heading, .text, .text2{
+        color: #151516;
+    }
+    .subs, .ns, .pb{
+        color: #ffffff;
+    }
+    .imageContainer, .imageContainerMain{
+        background: #ffffff;
+    }
+}
+@media (prefers-color-scheme: dark){
+    html{
+        background: #151516;
+    }
+    .MainCard, .MainCardLeft, .MainCardRight, .HomeCard{
+        background: #1C1C1E;
+    }
+    .appname, .subs, .ns, .pb, .title, .description, .heading, .text, .text2{
+        color: #F2F2F7;
+    }
+    .imageContainer, .imageContainerMain{
+        background: #2C2C2E;
+    }
+}
+.appname{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80vh;
+    position: relative;
+    z-index: 2;
+    font-size: 88px;
+}
+.MainCard, .MainCardLeft, .MainCardRight, .gridContainer, .HomeCard{
+    border-radius: 16px;
+    position: absolute;
+    justify-content: center;
+    top: 16px;
+    bottom: 16px;
+    overflow: auto;
+}
+.MainCard, .HomeCard{
+    left: 16px;
+    right: 16px;
+    align-items: center;
+}
+.HomeCard{
+    display: flex;
+}
+.gridContainer{
+    left: 16px;
+    right: 16px;
+    align-items: center;
+}
+.MainCardLeft{
+    left: 16px;
+    right: calc(8px + 25vw);
+    align-items: center;
+}
+.MainCardRight{
+    left: calc(75vw + 8px);
+    right: 16px;
+    align-items: top;
+}
+@media (min-width:1000px){
+    .subs, .ns, .pb{
+        height: 50px;
+        width: 160px;
+    }
+    .container{
+        height: 82px; 
+        width: 544px;
+    }
+}
+.subs, .ns, .pb{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 64px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.container{
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 64px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+.imageContainer{ 
+    box-sizing: border-box;
+    border-radius: 16px;
+    /* height: 376px; */
+    height: calc((100vh - 106px) / 3);
+    width: calc((100vw - 112px) / 4);
+    object-fit: cover;
+    border: 0px solid transparent;
+}
+.imageContainer:hover, .imageContainer:active{
+    transition: all .3s ease-in-out;
+    box-shadow: 0 0 32px rgba(33,33,33,0.05); 
+    scale: 100.5%;
+}
+.imageContainer:not(:hover){
+    transition: all .3s ease-in-out;
+}
+.imageContainerMain{ 
+    border-radius: 16px;
+    height: calc(100vh - 68px);
+    width: calc(75vw - 56px);
+    margin: 16px;
+    object-fit: cover;
+}
+.grid{
+    display: grid;
+    grid-gap: 16px;
+}
+@media (min-width: 1600px){
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 1600px) and (min-width: 1150px){
+    .grid{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .imageContainer{ 
+        width: calc((100vw - 96px) / 3);
+    }
+}
+@media (max-width: 1150px) and (min-width: 800px){
+    .grid{
+        grid-template-columns: 1fr 1fr;
+    }
+    .imageContainer{ 
+        width: calc((100vw - 80px) / 2);
+    }
+}
+@media (max-width:1300px){
+    .imageContainerMain{
+        align-items: center;
+        height: calc((100vh + 100vw) / 2.52);
+    }
+    .MainCardLeft{
+        height: calc(((100vh + 100vw) / 2.52) + 35px);
+    }
+}
+@media (max-width: 800px){
+    .grid{
+        grid-template-columns: 1fr;
+    }
+    .imageContainer{ 
+        width: calc(100vw - 64px);
+    }
+}
+@media (max-width: 1600px){
+    .MainCardLeft{
+        position: relative;
+        left: 8px;
+        margin-right: 16px;
+        align-items: center;
+    }
+    .MainCardRight{
+        position: relative;
+        margin-top: 16px;
+        margin-bottom: 24px;
+        left: 8px;
+        margin-right: 16px;
+        align-items: top;
+        height: min-content;
+    }
+    .imageContainerMain{ 
+        width: calc(100vw - 64px);
+    }
+}
+.textContainer{
+    margin: 32px;
+}
+.title{
+    font-size: 40px;
+    margin-top: 16px;
+    font-weight: 700;
+}
+.description{
+    opacity: 0.6;
+    font-size: 16px;
+    margin-bottom: 32px;
+    font-weight: 550;
+}
+.heading{
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+.text, .text2{
+    opacity: 0.8;
+    font-size: 18px;
+    font-weight: 550;
+}
+.text{
+    margin-bottom: 32px;
+}
+.app{
+    height: calc((100vh - 106px) / 6);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.html::-webkit-scrollbar{
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.html{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
